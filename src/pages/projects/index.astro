@@ -1,0 +1,119 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const year = new Date().getFullYear();
+
+// All gallery images from Squarespace
+const galleryImages = [
+  "IMG_6810.jpg",
+  "24012ec0-6872-4fe1-bd5c-e0db82dd935d.JPG",
+  "6f76f5d2-c63e-4f26-85fe-918cd99bb274.jpg",
+  "WhatsApp+Image+2025-02-14+at+09.02.57_76cf5f27.jpg",
+  "IMG_6830.jpg",
+  "fc1d518f-aa9d-41b6-922e-f87352a20b01.JPG",
+  "IMG_6808.jpg",
+  "b73e9ccd-a901-4009-bdc0-4179fb24856c.jpg",
+  "IMG_6832.jpg",
+  "IMG_6059.jpg",
+  "cd5c1548-a7d4-42f8-a78a-4cdacc2b0f03.jpg",
+  "IMG_6809.jpg",
+  "3adf64d9-a12a-48e0-959d-3d0a9297e118.JPG",
+  "IMG_6831.jpg",
+  "f922db97-d1a6-4b50-b4e6-c0bbd7f107b4.JPG",
+  "55f85b5f-4241-41ab-abff-768180224654.JPG",
+  "IMG_6223.jpg",
+  "36947aef-6bbb-46bb-b067-4ee39ca89a17.JPG",
+  "93c9d2f2-dd6a-4001-b75a-f94ac90c2fca.JPG",
+  "IMG_4960.jpg",
+  "20160621_140852.jpg",
+  "20160617_124006.jpg",
+  "20160603_103838.jpg",
+  "20160411_143234.jpg",
+  "20160125_162309.jpg",
+  "20160118_135544.jpg",
+  "20160210_132824.jpg",
+  "126FC079-C3DA-4FCE-8D7C-7D183027E07E.JPG",
+  "4654336003279556959.JPG",
+  "BBC749FC-C2D1-41E1-A8A8-4F7F21FA8C66.JPG",
+  "F5ECD1C6-2201-4A23-950E-777E1C2AA916.JPG",
+  "IMG_8260.jpg",
+  "IMG_8411.jpg",
+];
+---
+
+<BaseLayout>
+  <header class="fixed top-0 z-50 w-full border-b border-white/10 bg-gensteel-blue/95 backdrop-blur-sm">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4" aria-label="Main navigation">
+      <a href="/" class="flex items-center gap-3 text-white no-underline">
+        <img src="/images/logo.jpg" alt="Gensteel" class="h-10 w-auto" width="58" height="33" />
+        <span class="font-heading text-2xl font-bold tracking-tight">
+          <span class="text-gensteel-orange">GEN</span>STEEL
+        </span>
+      </a>
+      <div class="hidden items-center gap-8 md:flex">
+        <a href="/about" class="text-sm font-medium text-white/80 transition-colors hover:text-gensteel-orange">About</a>
+        <a href="/#services" class="text-sm font-medium text-white/80 transition-colors hover:text-gensteel-orange">Services</a>
+        <a href="/projects" class="text-sm font-medium text-gensteel-orange">Projects</a>
+        <a href="/blog" class="text-sm font-medium text-white/80 transition-colors hover:text-gensteel-orange">News</a>
+        <a href="/contact" class="rounded-md bg-gensteel-orange px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-gensteel-orange/90">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="bg-gensteel-blue px-6 pb-16 pt-32">
+    <div class="mx-auto max-w-3xl text-center">
+      <p class="mb-3 font-heading text-sm font-semibold uppercase tracking-[0.2em] text-gensteel-orange">Our Work</p>
+      <h1 class="font-heading text-4xl font-bold leading-tight text-white sm:text-5xl">
+        Project Gallery
+      </h1>
+      <p class="mt-4 text-lg text-white/70">
+        A selection of structural steel projects — commercial, industrial,
+        institutional, and custom fabrication across Ontario.
+      </p>
+    </div>
+  </section>
+
+  <!-- Gallery Grid -->
+  <section class="bg-white px-6 py-16">
+    <div class="mx-auto max-w-7xl">
+      <!-- Masonry-like grid -->
+      <div class="columns-1 gap-6 sm:columns-2 lg:columns-3">
+        {galleryImages.map((img, i) => (
+          <div class="group relative mb-6 overflow-hidden rounded-xl bg-steel-100">
+            <img
+              src={`/images/gallery/${img}`}
+              alt={`Gensteel steel fabrication project ${i + 1}`}
+              class="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gensteel-blue/0 transition-colors group-hover:bg-gensteel-blue/10"></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-gensteel-blue px-6 py-20 text-center">
+    <div class="mx-auto max-w-2xl">
+      <h2 class="mb-4 font-heading text-3xl font-bold text-white sm:text-4xl">
+        Have a project in mind?
+      </h2>
+      <p class="mb-8 text-lg text-white/70">
+        Let's discuss how Gensteel can bring your vision to life with
+        precision, quality, and on-time delivery.
+      </p>
+      <a href="/contact" class="inline-flex rounded-lg bg-gensteel-orange px-8 py-4 font-heading text-base font-semibold text-white transition-all hover:bg-gensteel-orange/90 hover:shadow-lg hover:shadow-gensteel-orange/25">
+        Get in Touch →
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-steel-950 px-6 py-10 text-center">
+    <p class="text-sm text-steel-400">
+      &copy; {year} Gensteel. All rights reserved. · 28 Erinville Drive, Erin, Ontario N0B 1T0
+    </p>
+  </footer>
+</BaseLayout>

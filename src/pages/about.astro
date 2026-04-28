@@ -1,0 +1,116 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const year = new Date().getFullYear();
+---
+
+<BaseLayout>
+  <header class="fixed top-0 z-50 w-full border-b border-white/10 bg-gensteel-blue/95 backdrop-blur-sm">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4" aria-label="Main navigation">
+      <a href="/" class="flex items-center gap-3 text-white no-underline">
+        <img src="/images/logo.jpg" alt="Gensteel" class="h-10 w-auto" width="58" height="33" />
+        <span class="font-heading text-2xl font-bold tracking-tight">
+          <span class="text-gensteel-orange">GEN</span>STEEL
+        </span>
+      </a>
+      <div class="hidden items-center gap-8 md:flex">
+        <a href="/about" class="text-sm font-medium text-gensteel-orange">About</a>
+        <a href="/#services" class="text-sm font-medium text-white/80 transition-colors hover:text-gensteel-orange">Services</a>
+        <a href="/projects" class="text-sm font-medium text-white/80 transition-colors hover:text-gensteel-orange">Projects</a>
+        <a href="/blog" class="text-sm font-medium text-white/80 transition-colors hover:text-gensteel-orange">News</a>
+        <a href="/contact" class="rounded-md bg-gensteel-orange px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-gensteel-orange/90">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="bg-gensteel-blue px-6 pb-16 pt-32">
+    <div class="mx-auto max-w-3xl text-center">
+      <p class="mb-3 font-heading text-sm font-semibold uppercase tracking-[0.2em] text-gensteel-orange">About Gensteel</p>
+      <h1 class="font-heading text-4xl font-bold leading-tight text-white sm:text-5xl">
+        Built on Experience.<br />Driven by Precision.
+      </h1>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="bg-white px-6 py-24">
+    <div class="mx-auto max-w-3xl">
+      <div class="prose prose-lg prose-steel max-w-none">
+        <p class="lead">
+          Established in 1994 by Joe Henriques, Gensteel began as a small miscellaneous
+          metal fabricator and has grown into a complete steel design, fabrication, and
+          installation service accredited by the Canadian Welding Bureau (CWB).
+        </p>
+        <p>
+          Our facility in Erin, Ontario, comprises a 13,000 square foot area for shaping
+          structural steel with advanced cutting technology that provides high precision.
+          With expertise in various project types like community centres, schools,
+          hospitals, and office complexes, we ensure efficient completion regardless of
+          location or size.
+        </p>
+        <p>
+          Our dedicated team tackles challenges at every stage, ensuring a competitive
+          advantage on complex projects and proactive scheduling. We are excited to
+          collaborate with you on successful project outcomes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats + Certs -->
+  <section class="bg-steel-50 px-6 py-24">
+    <div class="mx-auto max-w-5xl">
+      <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="text-center">
+          <p class="font-heading text-4xl font-bold text-gensteel-blue">1994</p>
+          <p class="mt-2 text-sm font-medium text-steel-500">Year Established</p>
+        </div>
+        <div class="text-center">
+          <p class="font-heading text-4xl font-bold text-gensteel-blue">13,000</p>
+          <p class="mt-2 text-sm font-medium text-steel-500">Square Foot Facility</p>
+        </div>
+        <div class="text-center">
+          <p class="font-heading text-4xl font-bold text-gensteel-blue">CWB</p>
+          <p class="mt-2 text-sm font-medium text-steel-500">Welding Bureau Certified</p>
+        </div>
+        <div class="text-center">
+          <p class="font-heading text-4xl font-bold text-gensteel-blue">ON</p>
+          <p class="mt-2 text-sm font-medium text-steel-500">Serving All Ontario</p>
+        </div>
+      </div>
+
+      <div class="mt-16 border-t border-steel-200 pt-12">
+        <h2 class="mb-8 text-center font-heading text-2xl font-bold text-steel-900">Certifications &amp; Memberships</h2>
+        <div class="flex flex-wrap items-center justify-center gap-8">
+          <div class="flex flex-col items-center gap-3">
+            <img src="/images/cisc-cert.jpg" alt="Canadian Institute of Steel Construction / Institut Canadien de la Construction en Acier" class="h-20 w-auto" loading="lazy" />
+            <span class="text-xs font-medium text-steel-500">CISC / ICCA Member</span>
+          </div>
+          <div class="flex flex-col items-center gap-3">
+            <img src="/images/cwb-cert.jpg" alt="Canadian Welding Bureau Division 1 Certification" class="h-20 w-auto" loading="lazy" />
+            <span class="text-xs font-medium text-steel-500">CWB Certified — Div. 1</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team / Facility -->
+  <section class="bg-white px-6 py-24">
+    <div class="mx-auto max-w-5xl">
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <img src="/images/gallery/IMG_6809.jpg" alt="Gensteel facility" class="aspect-[4/3] w-full rounded-xl object-cover shadow-md" loading="lazy" />
+        <img src="/images/gallery/IMG_6832.jpg" alt="Steel fabrication in progress" class="aspect-[4/3] w-full rounded-xl object-cover shadow-md" loading="lazy" />
+        <img src="/images/beam-weld.jpg" alt="Welded steel beam" class="aspect-[4/3] w-full rounded-xl object-cover shadow-md" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-steel-950 px-6 py-10 text-center">
+    <p class="text-sm text-steel-400">
+      &copy; {year} Gensteel. All rights reserved. · 28 Erinville Drive, Erin, Ontario N0B 1T0
+    </p>
+  </footer>
+</BaseLayout>
